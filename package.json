@@ -1,0 +1,14 @@
+{
+  "name": "adb_trace",
+  "version": "0.0.0",
+  "description": "Requires Android Chrome version 25+",
+  "main": "report.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "clim": "~1.0.0",
+    "optimist": "~0.6.1",
+    "q-fs": "~0.1.36"
+  }
+}
