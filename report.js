@@ -84,6 +84,20 @@ function cleanup() {
   }
 }
 
+// Calculate stats:
+var gauss = require('gauss');
+
+var stats = new gauss.Vector(frameTimes.map(function(e) { return e / 1000; }));
+console.log("Stats");
+console.log("Mean: (ms) ", stats.mean());
+console.log("Stdev:(ms) ", stats.stdev());
+
+
+var logStats = gauss.Vector(frameTimes.map(function(e) { return Math.log(e / 1000); }));
+console.log("Log-normal stats");
+console.log("Mean: (ms) ", Math.pow(Math.E, logStats.mean()));
+console.log("Stdev:(ms)  ", Math.pow(Math.E, logStats.stdev()));
+
 var fs = require('q-fs');
 
 fs.write(file + ".times.csv", frameTimes.join('\n')).done();
